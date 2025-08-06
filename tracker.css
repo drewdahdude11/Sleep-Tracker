@@ -14,6 +14,12 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Header */
 header {
   background: #1b2a49;
@@ -42,8 +48,8 @@ main {
   margin: auto;
 }
 
-/* Sections */
-section {
+/* Tracker Section */
+.tracker-section {
   background: #ffffff;
   border-radius: 12px;
   padding: 2rem;
@@ -51,25 +57,48 @@ section {
   margin-bottom: 2rem;
 }
 
-section h2 {
+.tracker-section h2 {
   color: #1b2a49;
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-left: 4px solid #8cb4ff;
   padding-left: 0.75rem;
 }
 
-section p {
+/* Sleep Form */
+.sleep-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sleep-form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1b2a49;
+}
+
+.sleep-form input,
+.sleep-form select,
+.sleep-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
-  margin-bottom: 0;
+  font-family: inherit;
+  background: #f9fbff;
+  transition: border-color 0.3s ease;
 }
 
-/* CTA Button */
-.cta {
-  text-align: center;
+.sleep-form input:focus,
+.sleep-form select:focus,
+.sleep-form textarea:focus {
+  border-color: #4c70a8;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 112, 168, 0.2);
 }
 
-/* General Button Style */
+/* Button Style */
 .btn {
   display: inline-block;
   background: #4c70a8;
@@ -90,7 +119,21 @@ section p {
 /* Back Home Button Container */
 .back-home-container {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem 0 1rem;
+}
+
+/* Sleep Log List */
+#log-list {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+#log-list li {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #f4f6f8;
+  border-radius: 8px;
+  border-left: 4px solid #8cb4ff;
 }
 
 /* Footer */
