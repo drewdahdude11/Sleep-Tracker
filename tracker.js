@@ -7,21 +7,22 @@ document.getElementById("add-entry").addEventListener("click", () => {
     return;
   }
 
-  // Load existing entries or start fresh
   let entries = JSON.parse(localStorage.getItem("sleepEntries")) || [];
-
-  // Add new entry
   entries.push({ bed_time: bedTime, wake_time: wakeTime });
 
-  // Save back to localStorage
   localStorage.setItem("sleepEntries", JSON.stringify(entries));
 
-  // Update displayed list
   loadEntries();
 
-  // Optional: clear inputs after adding
   document.getElementById("bed-time").value = "";
   document.getElementById("wake-time").value = "";
+});
+
+document.getElementById("clear-entries").addEventListener("click", () => {
+  if (confirm("Are you sure you want to clear all entries?")) {
+    localStorage.removeItem("sleepEntries");
+    loadEntries();
+  }
 });
 
 function loadEntries() {
