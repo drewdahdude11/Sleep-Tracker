@@ -42,4 +42,3 @@ function loadEntries() {
 }
 
 window.onload = loadEntries;
-
