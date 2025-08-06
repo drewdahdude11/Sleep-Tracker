@@ -146,3 +146,22 @@ footer {
   border-top: 1px solid #ccc;
   margin-top: auto;
 }
+
+/* Ensure footer link styled like a button */
+footer .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  background: #4c70a8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(76, 112, 168, 0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+footer .btn:hover {
+  background: #355882;
+  transform: translateY(-2px);
+}
