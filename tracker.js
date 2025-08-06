@@ -25,12 +25,14 @@ window.addEventListener("DOMContentLoaded", () => {
     wakeInput.value = "";
   });
 
-  clearBtn.addEventListener("click", () => {
-    if (confirm("Are you sure you want to clear all entries?")) {
-      localStorage.removeItem("sleepEntries");
-      loadEntries();
-    }
-  });
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to clear all entries?")) {
+        localStorage.removeItem("sleepEntries");
+        loadEntries();
+      }
+    });
+  }
 
   function loadEntries() {
     const entries = JSON.parse(localStorage.getItem("sleepEntries")) || [];
@@ -41,9 +43,30 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    entries.forEach(({ bed_time, wake_time }) => {
+    entries.forEach(({ bed_time, wake_time }, index) => {
       const li = document.createElement("li");
-      li.textContent = `🕒 Bed: ${bed_time}, ☀️ Wake: ${wake_time}`;
+      li.textContent = `🕒 Bed: ${bed_time}, ☀️ Wake: ${wake_time} `;
+
+      // Create remove button
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.style.marginLeft = "10px";
+      removeBtn.style.padding = "2px 8px";
+      removeBtn.style.border = "none";
+      removeBtn.style.background = "#d9534f";
+      removeBtn.style.color = "white";
+      removeBtn.style.borderRadius = "5px";
+      removeBtn.style.cursor = "pointer";
+      removeBtn.title = "Remove this entry";
+
+      removeBtn.addEventListener("click", () => {
+        // Remove entry at this index
+        entries.splice(index, 1);
+        localStorage.setItem("sleepEntries", JSON.stringify(entries));
+        loadEntries();
+      });
+
+      li.appendChild(removeBtn);
       logList.appendChild(li);
     });
   }
