@@ -48,7 +48,8 @@ section {
 
 /* Section Headings */
 .intro h2,
-.cta h2 {
+.cta h2,
+.tracker-section h2 {
   margin-bottom: 1rem;
   color: #1b2a49;
   font-size: 1.8rem;
@@ -85,3 +86,79 @@ footer {
   margin-top: auto;
 }
 
+/* Bottom Image */
+.bottom-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.bottom-image img {
+  max-width: 100%;
+  width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.bottom-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Sleep Tracker Section */
+.tracker-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+}
+
+/* Tracker Heading */
+.tracker-section h2 {
+  color: #1b2a49;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #8cb4ff;
+  padding-left: 0.75rem;
+}
+
+/* Tracker Form Styling */
+.sleep-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sleep-form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1b2a49;
+}
+
+.sleep-form input,
+.sleep-form select,
+.sleep-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f9fbff;
+  transition: border-color 0.3s ease;
+}
+
+.sleep-form input:focus,
+.sleep-form select:focus,
+.sleep-form textarea:focus {
+  border-color: #4c70a8;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 112, 168, 0.2);
+}
+
+.sleep-form .btn {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
