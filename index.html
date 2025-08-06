@@ -2,43 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleep Tracker</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Tracker</title>
+  <link rel="stylesheet" href="tracker.css" />
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Sleep Tracker 🛏️</h1>
-            <p>Log your sleep times to see your patterns over time.</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>Sleep Tracker 🛏️</h1>
+      <p>Log your sleep times to see your patterns over time.</p>
+    </header>
 
-        <section class="tracker-form">
+    <main>
+      <section class="tracker-section">
+        <h2>📝 Log Your Sleep</h2>
+        <form class="sleep-form">
+          <div>
             <label for="bed-time">🕒 Bed Time:</label>
-            <input type="time" id="bed-time" />
+            <input type="time" id="bed-time" name="bed-time" required />
+          </div>
 
+          <div>
             <label for="wake-time">☀️ Wake Time:</label>
-            <input type="time" id="wake-time" />
+            <input type="time" id="wake-time" name="wake-time" required />
+          </div>
 
-            <button id="add-entry">Add Entry</button>
-        </section>
+          <button type="submit" class="btn" id="add-entry">Add Entry</button>
+        </form>
+      </section>
 
-        <section class="log">
-            <h2>🗓️ Sleep Log</h2>
-            <ul id="log-list">
-                <li>No entries yet.</li>
-            </ul>
-            <button id="clear-entries">Clear All Entries</button>
-        </section>
+      <section class="tracker-section">
+        <h2>📊 Sleep Log</h2>
+        <ul id="log-list">
+          <li>No entries yet.</li>
+        </ul>
+      </section>
+    </main>
 
-        <footer>
-            <a href="https://drewdahdude11.github.io/Sleep-Home/">← Back to Home</a>
-        </footer>
-    </div>
+    <footer>
+      <p><a href="index.html">← Back to Home</a></p>
+    </footer>
+  </div>
 
-    <script src="tracker.js"></script>
+  <script src="tracker.js"></script>
 </body>
 
 </html>
